@@ -13,6 +13,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 bat "npm i"
+                bat "npm start &"
                 bat "npx cypress run"
             }
         }
