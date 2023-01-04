@@ -6,10 +6,7 @@ pipeline{
         string(name: "CY", defaultValue: "cypress/e2e/**")
         choice(name: "BROWSER", choices: ['chrome', 'edge', 'firefox'])
     }
-    options{
-        ansiColor('xterm')
-    }
-
+    
     stages{
         stage('Deploy'){
             steps{
