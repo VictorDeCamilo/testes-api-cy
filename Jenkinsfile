@@ -14,7 +14,11 @@ pipeline{
             steps{
                 bat "npm i"
                 bat "npm start &"
+            }
+         stage('Executar os testes'){
+            steps{
                 bat "npx cypress run"
+               }
             }
         }
     }
