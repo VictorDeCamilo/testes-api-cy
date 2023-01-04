@@ -13,13 +13,8 @@ pipeline{
         stage('Deploy'){
             steps{
                 bat "npm i"
-                bat "npm start &"
+                bat "npm start & npx cypress run"
             }
         }
-         stage('Executar os testes'){
-            steps{
-                bat "npx cypress run"
-               }
-            }
     }
 }
