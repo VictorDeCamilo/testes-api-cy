@@ -13,7 +13,12 @@ pipeline{
         stage('Deploy'){
             steps{
                 bat "npm i"
-                bat "npm start & npx cypress run"
+                bat "npm start & wait-on http://localhost:3000"
+            }
+        }
+        stage('Executar testes'){
+            steps{
+                bat 'npm run cy:run'
             }
         }
     }
